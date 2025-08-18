@@ -6,9 +6,7 @@ export class AzureDevOps {
     private _httpsAgent: Agent;
 
     constructor() {
-        this._httpsAgent = new Agent({
-            rejectUnauthorized: false,
-        });
+        this._httpsAgent = new Agent();
     }
 
     public async get<T = any>(endpoint: string): Promise<T> {

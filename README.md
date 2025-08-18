@@ -10,6 +10,7 @@ Automate pull request (PR) reviews in Azure DevOps using the PR Inspection Assis
 -   **Customizable Review Criteria**: Tailor the bot to specific code quality metrics.
 -   **Azure DevOps Integration**: Seamlessly integrates with existing DevOps pipelines.
 -   **Natural Language Feedback**: Provides human-readable, actionable feedback.
+-   **Secure by Default**: Validates TLS certificates and masks secrets when verbose logging is enabled.
 
 ![](./pr-inspection-assistant/assets/ado-ai-comment.jpg)
 
