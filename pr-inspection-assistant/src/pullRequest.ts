@@ -111,8 +111,22 @@ export class PullRequest {
             return false;
         }
 
+        // Ensure thread has required Azure DevOps fields
+        const threadPayload = {
+            ...thread,
+            pullRequestThreadContext: thread.pullRequestThreadContext || {
+                changeTrackingId: 1,
+                iterationContext: {
+                    firstComparingIteration: 1,
+                    secondComparingIteration: await this.getLatestIterationId(),
+                },
+            },
+        };
+
+        Logger.info(`Adding thread payload: ${JSON.stringify(threadPayload, null, 2)}`);
+        
         const endpoint = `${this.getPullRequestBaseUri()}/threads?api-version=7.0`;
-        const response = await this._ado.post(endpoint, thread);
+        const response = await this._ado.post(endpoint, threadPayload);
 
         if (!response.ok) {
             if (response.status === 401) {
@@ -131,6 +145,7 @@ export class PullRequest {
             fileName = `/${fileName}`;
         }
 
+        const latestIterationId = await this.getLatestIterationId();
         let body = {
             comments: [
                 {
@@ -146,7 +161,7 @@ export class PullRequest {
                 changeTrackingId: 1,
                 iterationContext: {
                     firstComparingIteration: 1,
-                    secondComparingIteration: 2,
+                    secondComparingIteration: latestIterationId,
                 },
             },
         };

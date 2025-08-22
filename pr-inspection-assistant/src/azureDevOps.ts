@@ -76,7 +76,8 @@ export class AzureDevOps {
         const response = await fetch(endpoint, payload);
 
         if (!response.ok) {
-            tl.warning(`ADO Failed to fetch: ${method} ${endpoint}. Response: ${response.statusText}`);
+            const responseText = await response.text();
+            tl.warning(`ADO Failed to fetch: ${method} ${endpoint}. Status: ${response.status} ${response.statusText}. Response: ${responseText}`);
         } else {
             tl.debug(`ADO Fetch success.`);
         }
