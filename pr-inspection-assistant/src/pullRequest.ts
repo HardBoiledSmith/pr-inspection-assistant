@@ -21,9 +21,7 @@ export class PullRequest {
     private static readonly PRIA_LAST_REVIEWED_KEY = 'Pria.LastReviewedIteration';
 
     constructor() {
-        this._httpsAgent = new Agent({
-            rejectUnauthorized: false,
-        });
+        this._httpsAgent = new Agent();
         this._ado = new AzureDevOps();
     }
 
