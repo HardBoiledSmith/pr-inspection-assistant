@@ -17,6 +17,19 @@ export class Main {
     private static _pullRequest: PullRequest;
 
     public static async main(): Promise<void> {
+        Logger.info('DEBUG System Variables ##################################');
+        Logger.info('System.TeamFoundationCollectionUri:', tl.getVariable('System.TeamFoundationCollectionUri'));
+        Logger.info('System.TeamProjectId:', tl.getVariable('System.TeamProjectId'));
+        Logger.info('Build.Repository.Name:', tl.getVariable('Build.Repository.Name'));
+        Logger.info('Build.Reason:', tl.getVariable('Build.Reason'));
+        Logger.info('System.AccessToken:', tl.getVariable('System.AccessToken'));
+        Logger.info('System.PullRequest.PullRequestId:', tl.getVariable('System.PullRequest.PullRequestId'));
+        Logger.info('System.PullRequest.TargetBranchName:', tl.getVariable('System.PullRequest.TargetBranchName'));
+        Logger.info('System.PullRequest.TargetBranch:', tl.getVariable('System.PullRequest.TargetBranch'));
+        Logger.info('System.PullRequest.SourceBranch:', tl.getVariable('System.PullRequest.SourceBranch'));
+        Logger.info('pr_request_param', tl.getInput('pr_request_param', false));
+        Logger.info('########################################################');
+
         if (!this.isValidTrigger()) return;
 
         const inputs = this.getInputValues();
