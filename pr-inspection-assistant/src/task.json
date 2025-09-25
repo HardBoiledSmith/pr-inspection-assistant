@@ -156,6 +156,14 @@
             "label": "Minimum confidence score (Experimental)",
             "defaultValue": "9",
             "helpMarkDown": "Set the minimum confidence score (1-10) required for comments to appear. Only comments with a confidence score equal to or above this value will be shown."
+        },
+        {
+            "name": "pull_request",
+            "type": "object",
+            "label": "Customized pull request information to override default azure pipeline configuration. (for ABI)",
+            "defaultValue": {},
+            "required": false,
+            "helpMarkDown": "Set as 'parameters.pr_request' to override default azure pipeline configuration. (for ABI)"
         }
     ],
     "execution": {
