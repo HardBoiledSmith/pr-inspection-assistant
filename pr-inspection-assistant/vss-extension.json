@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "pria",
-    "version": "2.1.52",
+    "version": "2.1.53",
     "name": "PR Inspection Assistant",
     "publisher": "HBsmith",
     "public": true,
