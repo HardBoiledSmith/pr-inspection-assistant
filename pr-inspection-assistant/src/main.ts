@@ -27,7 +27,9 @@ export class Main {
         Logger.info('System.PullRequest.TargetBranchName:', tl.getVariable('System.PullRequest.TargetBranchName'));
         Logger.info('System.PullRequest.TargetBranch:', tl.getVariable('System.PullRequest.TargetBranch'));
         Logger.info('System.PullRequest.SourceBranch:', tl.getVariable('System.PullRequest.SourceBranch'));
-        Logger.info('pull_request', tl.getInput('pull_request', false));
+        Logger.info('pull_request_id', tl.getInput('pull_request_id', false));
+        Logger.info('pull_request_source_branch', tl.getInput('pull_request_source_branch', false));
+        Logger.info('pull_request_target_branch', tl.getInput('pull_request_target_branch', false));
         Logger.info('########################################################');
 
         if (!this.isValidTrigger()) return;
