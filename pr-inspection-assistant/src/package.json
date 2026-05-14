@@ -19,7 +19,7 @@
     "micromatch": "^4.0.8",
     "openai": "^4.80.0",
     "parse-git-diff": "^0.0.17",
-    "simple-git": "^3.32.3"
+    "simple-git": "^3.36.0"
   },
   "devDependencies": {
     "@dotenvx/dotenvx": "^1.36.0",
